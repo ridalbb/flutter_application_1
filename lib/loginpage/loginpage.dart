@@ -1,70 +1,74 @@
 import 'package:flutter/material.dart';
-import 'package:aplikasi_reservasi_travel_bus/loginpage/loginpage.dart';
+import 'package:aplikasi_reservasi_travel_bus/homepage/homepage.dart';
 
 class loginpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
-        body: Column(
-      children: [
-        Container(
-          color: Color.fromARGB(255, 245, 93, 11),
-          width: 400,
-          height: 100,
-          child: Image(
-            image: AssetImage("images/ptpos3.png"),
+      body: Column(
+        children: [
+          Container(
+            color: Color.fromARGB(255, 245, 93, 11),
+            width: screenWidth,
+            height: screenHeight * 0.15,
+            child: Image(
+              image: AssetImage("images/ptpos3.png"),
+            ),
           ),
-        ),
-        Container(
-          color: Color.fromARGB(255, 245, 93, 11),
-          width: 400,
-          height: 681,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                  margin: const EdgeInsets.all(20),
-                  width: 350,
-                  height: 600,
+          Container(
+            color: Color.fromARGB(255, 245, 93, 11),
+            width: screenWidth,
+            height: screenHeight * 0.85,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(screenWidth * 0.05),
+                  width: screenWidth * 0.7,
+                  height: screenHeight * 0.8,
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      borderRadius: BorderRadius.circular(70)),
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.circular(screenWidth * 0.175),
+                  ),
                   child: Column(
                     children: [
                       Container(
-                        margin: const EdgeInsets.all(20),
+                        margin: EdgeInsets.all(screenWidth * 0.05),
                         color: Color.fromARGB(255, 255, 255, 255),
-                        width: 250,
-                        height: 50,
+                        width: screenWidth * 0.5,
+                        height: screenHeight * 0.05,
                         child: Text(
                           "Login",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontWeight: FontWeight.w900,
                             color: Color.fromARGB(255, 7, 0, 0),
-                            fontSize: 25,
+                            fontSize: screenHeight * 0.025,
                           ),
                         ),
                       ),
                       Container(
-                        margin: const EdgeInsets.all(20),
+                        margin: EdgeInsets.all(screenWidth * 0.05),
                         color: Color.fromARGB(255, 255, 255, 255),
-                        width: 400,
-                        height: 50,
+                        width: screenWidth * 0.9,
+                        height: screenHeight * 0.05,
                         child: Padding(
-                          padding: const EdgeInsets.all(10),
+                          padding: EdgeInsets.all(screenWidth * 0.02),
                           child: TextField(
                             showCursor: true,
                             cursorColor: Colors.black,
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: screenHeight * 0.02,
                             ),
                             decoration: InputDecoration(
                               icon: Icon(
                                 Icons.email,
-                                size: 25,
+                                size: screenHeight * 0.025,
                               ),
                               hintText: "Email",
                             ),
@@ -72,46 +76,46 @@ class loginpage extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: const EdgeInsets.all(20),
+                        margin: EdgeInsets.all(screenWidth * 0.05),
                         color: Color.fromARGB(255, 255, 255, 255),
-                        width: 400,
-                        height: 50,
+                        width: screenWidth * 0.9,
+                        height: screenHeight * 0.05,
                         child: Padding(
-                          padding: const EdgeInsets.all(10),
+                          padding: EdgeInsets.all(screenWidth * 0.02),
                           child: TextField(
                             showCursor: true,
                             cursorColor: Colors.black,
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 20,
+                              fontSize: screenHeight * 0.02,
                             ),
                             decoration: InputDecoration(
                               icon: Icon(
                                 Icons.lock,
-                                size: 25,
+                                size: screenHeight * 0.025,
                               ),
                               hintText: "Password",
                             ),
                           ),
                         ),
                       ),
-                  
                       Container(
-                        margin: const EdgeInsets.all(1),
-                        width: 280,
-                        height: 50,
+                        margin: EdgeInsets.all(screenWidth * 0.005),
+                        width: screenWidth * 0.56,
+                        height: screenHeight * 0.05,
                         child: TextButton(
                           style: TextButton.styleFrom(
                             backgroundColor: Color.fromARGB(255, 245, 93, 11),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius:
+                                  BorderRadius.circular(screenWidth * 0.1),
                             ),
                           ),
                           onPressed: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return loginpage();
+                                  return homepage();
                                 },
                               ),
                             );
@@ -120,33 +124,32 @@ class loginpage extends StatelessWidget {
                             "Login",
                             style: TextStyle(
                               color: Color(0xffffffff),
-                              fontSize: 25,
+                              fontSize: screenHeight * 0.025,
                             ),
                           ),
                         ),
                       ),
-
                       Container(
-                        width: 300,
-                        height: 30,
+                        width: screenWidth * 0.7,
+                        height: screenHeight * 0.03,
                         color: Color.fromARGB(255, 255, 255, 255),
-                        
-                         child: Text(
-                            "Don’t have an account? Register here",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 241, 167, 92),
-                              fontSize: 15,
-                            ),
+                        child: Text(
+                          "Don’t have an account? Register here",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 241, 167, 92),
+                            fontSize: screenHeight * 0.015,
                           ),
-                          
+                        ),
                       )
                     ],
-                  ))
-            ],
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 }
