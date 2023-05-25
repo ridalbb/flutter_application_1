@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:aplikasi_reservasi_travel_bus/searchpage/searchpage.dart';
 
-class homepage extends StatelessWidget {
+class homepage extends StatefulWidget {
+  @override
+  _homepageState createState() => _homepageState();
+}
+
+class _homepageState extends State<homepage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final double screenHeight = MediaQuery.of(context).size.height;
@@ -172,6 +185,8 @@ class homepage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         // Navbar
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
