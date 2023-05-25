@@ -9,6 +9,8 @@ class welcomepage extends StatelessWidget {
 
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             color: Color.fromARGB(255, 253, 253, 253),

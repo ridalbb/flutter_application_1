@@ -9,6 +9,8 @@ class signuppage extends StatelessWidget {
 
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             color: Color.fromARGB(255, 245, 93, 11),
@@ -23,8 +25,8 @@ class signuppage extends StatelessWidget {
             width: screenWidth,
             height: screenHeight * 0.85,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   margin: EdgeInsets.all(screenWidth * 0.05),
@@ -35,6 +37,8 @@ class signuppage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(screenWidth * 0.175),
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                         margin: EdgeInsets.all(screenWidth * 0.05),

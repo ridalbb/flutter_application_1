@@ -61,6 +61,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - images/bandung.png
+    - images/bogor.png
+    - images/jakarta.png
     - images/ptpos.png
     - images/ptpos2.png
     - images/ptpos3.png

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:aplikasi_reservasi_travel_bus/searchpage/searchpage.dart';
 
 class homepage extends StatelessWidget {
   @override
@@ -48,15 +49,22 @@ class homepage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   // Card 1
-                  child: Container(
-                    width: screenWidth * 0.25,
-                    height: screenHeight * 0.2,
-                    child: Center(
-                      child: Text(
-                        'Bandung',
-                        style: TextStyle(fontSize: 18),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'images/ptpos.png',
+                        width: screenWidth * 0.25,
+                        height: screenWidth * 0.25 * 0.75, // Adjust the aspect ratio as needed
+                        fit: BoxFit.cover,
                       ),
-                    ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                          'Bandung',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Card(
@@ -65,15 +73,22 @@ class homepage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   // Card 2
-                  child: Container(
-                    width: screenWidth * 0.25,
-                    height: screenHeight * 0.2,
-                    child: Center(
-                      child: Text(
-                        'Jakarta',
-                        style: TextStyle(fontSize: 18),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'images/ptpos2.png',
+                        width: screenWidth * 0.25,
+                        height: screenWidth * 0.25 * 0.75, // Adjust the aspect ratio as needed
+                        fit: BoxFit.cover,
                       ),
-                    ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                          'Jakarta',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Card(
@@ -82,15 +97,22 @@ class homepage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   // Card 3
-                  child: Container(
-                    width: screenWidth * 0.25,
-                    height: screenHeight * 0.2,
-                    child: Center(
-                      child: Text(
-                        'Bogor',
-                        style: TextStyle(fontSize: 18),
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        'images/ptpos3.png',
+                        width: screenWidth * 0.25,
+                        height: screenWidth * 0.25 * 0.75, // Adjust the aspect ratio as needed
+                        fit: BoxFit.cover,
                       ),
-                    ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                          'Bogor',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -98,23 +120,32 @@ class homepage extends StatelessWidget {
             Container(
               width: screenWidth * 0.9,
               padding: EdgeInsets.symmetric(vertical: 20),
-              child: TextField(
-                // Search Bar
-                decoration: InputDecoration(
-                  prefixIcon: GestureDetector(
-                    onTap: () {
-                      // Add functionality for the search icon here
-                      print('Search icon tapped');
-                    },
-                    child: Icon(Icons.search, color: Colors.white),
+              child: ElevatedButton.icon(
+                // Search Button
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return searchpage();
+                      },
+                    ),
+                  );
+                },
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.black, // Set the desired icon color here
+                ),
+                label: Text(
+                  'Cari',
+                  style: TextStyle(
+                    color: Colors.black, // Set the desired text color here
                   ),
-                  hintText: 'Search',
-                  hintStyle: TextStyle(color: Colors.white),
-                  border: OutlineInputBorder(
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  filled: true,
-                  fillColor: Colors.white,
                 ),
               ),
             ),
