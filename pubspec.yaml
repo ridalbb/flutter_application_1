@@ -32,6 +32,9 @@ dependencies:
     sdk: flutter
   dropdown_search: ^0.6.1
   intl: ^0.17.0
+  book_my_seat: ^1.0.1
+  flutter_svg: ^1.1.6
+  im_stepper: ^0.1.2+5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -71,6 +74,10 @@ flutter:
     - images/malang.jpg
     - images/avatar.png
     - images/avatar2.jpeg
+    - assets/design/seat_disabled.svg
+    - assets/design/seat_selected.svg
+    - assets/design/seat_sold.svg
+    - assets/design/seat_unselected.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -41,7 +41,7 @@ class _ProfilePageState extends State<ProfilePage> {
         automaticallyImplyLeading: false,
         centerTitle: true,
         toolbarHeight: 60,
-        backgroundColor: Colors.white,
+        backgroundColor:Color.fromARGB(255, 238, 112, 44),
         title: const Text(
           'Profile',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),

@@ -40,8 +40,15 @@ class _MyTicketPageState extends State<MyTicketPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('My Tickets'),
+        appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        toolbarHeight: 60,
+        backgroundColor: Color.fromARGB(255, 238, 112, 44),
+        title: const Text(
+          'My Ticket',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
       ),
       body: Center(
         child: Text('My Tickets Page'),
